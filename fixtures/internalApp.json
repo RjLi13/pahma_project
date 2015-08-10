@@ -1,0 +1,14 @@
+[
+    {
+        "fields": {
+            "content": "This is the \"internal\" Search webapp -- it requires authentication to use and contains data that for one reason or another is not appropriate for inclusion in a public search application.", 
+            "contentType": "HTML", 
+            "live": true, 
+            "name": "About", 
+            "order": 0, 
+            "slug": "about"
+        }, 
+        "model": "internal.additionalinfo", 
+        "pk": 1
+    }
+]
