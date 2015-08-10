@@ -2,6 +2,7 @@ __author__ = 'jblowe, amywieliczka'
 
 import time, datetime
 
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, render_to_response, redirect
 from django.template.loader import render_to_string
@@ -9,14 +10,14 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django import forms
 from cspace_django_site.main import cspace_django_site
-from utils import writeCsv, doSearch, setupGoogleMap, setupBMapper, computeStats, setupCSV, setDisplayType, setConstants, loginfo
-from appconfig import CSVPREFIX, CSVEXTENSION, MAXRESULTS
+from common.utils import writeCsv, doSearch, setupGoogleMap, setupBMapper, computeStats, setupCSV, setDisplayType, setConstants, loginfo
+from common.appconfig import CSVPREFIX, CSVEXTENSION, MAXRESULTS
 from .models import AdditionalInfo
 
 
 # global variables (at least to this module...)
 
-from appconfig import loadFields
+from common.appconfig import loadFields
 
 
 def direct(request):

@@ -21,7 +21,7 @@ from django.http import HttpResponse
 from os import path
 from common import cspace # we use the config file reading function
 from cspace_django_site import settings
-from search.appconfig import getParms
+from common.appconfig import getParms
 
 import solr
 
