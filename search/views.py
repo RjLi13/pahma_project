@@ -2,7 +2,7 @@ __author__ = 'jblowe, amywieliczka'
 
 
 global FIELDDEFINITIONS
-FIELDDEFINITIONS = 'pahmaportalparms'
+FIELDDEFINITIONS = 'pahmaportalparms.csv'
 
 import time, datetime
 from os import path
@@ -18,7 +18,11 @@ from common.utils import writeCsv, doSearch, setupGoogleMap, setupBMapper, compu
 from common.utils import CSVPREFIX, CSVEXTENSION
 from common.appconfig import loadFields, loadConfiguration
 from .models import AdditionalInfo
+from cspace_django_site import settings
 
+# on startup, do a query to get options values for forms...
+DROPDOWNS, FIELDS, FACETS, LOCATION, PARMS, SEARCHCOLUMNS, SEARCHROWS, SOLRSERVER, SOLRCORE, TITLE, DEFAULTSORTKEY, REQUIRED = loadFields(FIELDDEFINITIONS)
+print 'Reading field definitions from %s' % path.join(settings.BASE_PARENT_DIR, 'config/' + FIELDDEFINITIONS)
 
 
 def direct(request):
@@ -26,6 +30,8 @@ def direct(request):
 
 
 def search(request):
+    DROPDOWNS, FIELDS, FACETS, LOCATION, PARMS, SEARCHCOLUMNS, SEARCHROWS, SOLRSERVER, SOLRCORE, TITLE, DEFAULTSORTKEY, REQUIRED = loadFields(FIELDDEFINITIONS)
+
     if request.method == 'GET' and request.GET != {}:
         context = {'searchValues': dict(request.GET.iteritems())}
         context = doSearch(context)
