@@ -2,6 +2,8 @@
 
 import csv
 import solr
+import os
+
 from os import path, popen
 from copy import deepcopy
 
@@ -160,6 +162,7 @@ def loadConfiguration(configFileName):
         print 'this webapp will probably not work.'
 
     return MAXMARKERS, MAXRESULTS, MAXLONGRESULTS, MAXFACETS, IMAGESERVER, BMAPPERSERVER, BMAPPERDIR, BMAPPERURL, BMAPPERCONFIGFILE, CSVPREFIX, CSVEXTENSION, LOCALDIR, SEARCH_QUALIFIERS, EMAILABLEURL, SUGGESTIONS, CSPACESERVER, INSTITUTION, VERSION, DERIVATIVECOMPACT, DERIVATIVEGRID, SIZECOMPACT, SIZEGRID
+
 
 def loadFields(fieldFile):
     # get "frontend" configuration from the ... frontend configuration file

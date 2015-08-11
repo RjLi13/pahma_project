@@ -7,6 +7,7 @@ FIELDDEFINITIONS = 'pahmaportalparms.csv'
 import time, datetime
 from os import path
 
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, render_to_response, redirect
 from django.template.loader import render_to_string
@@ -17,6 +18,7 @@ from cspace_django_site.main import cspace_django_site
 from common.utils import writeCsv, doSearch, setupGoogleMap, setupBMapper, computeStats, setupCSV, setDisplayType, setConstants, loginfo
 from common.utils import CSVPREFIX, CSVEXTENSION
 from common.appconfig import loadFields, loadConfiguration
+
 from .models import AdditionalInfo
 from cspace_django_site import settings
 
